@@ -1,10 +1,21 @@
+import { clsx } from 'clsx';
 
 interface Props {
   children?: string
+  size?:  'sm' | 'md' | 'lg'
 }
 
-export function Text({children}:Props) {
+export function Text({children, size = 'md'}:Props) {
   return(
-    <h1>{children || 'hello world'}</h1>
+    <span className={clsx(
+      "text-gray-100 font-sans",
+      {
+        "text-xs": size === 'sm',
+        "text-sm": size === 'md',
+        "text-md": size === 'lg'
+      }
+    )}>
+      {children || 'hello world'}
+    </span>
   )
 }

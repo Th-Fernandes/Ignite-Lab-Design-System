@@ -2,7 +2,7 @@ import {Text} from "./components/Text"
 
 export function App() {
   return (
-    <Text>Test lab</Text>
+    <Text size="sm">Test lab</Text>
   )
 }
 
