@@ -25,6 +25,7 @@ module.exports = {
         '800': '#202024',
         '900': '#121214',
       },
+      transparent: 'transparent'
     },
     
     extend: {
