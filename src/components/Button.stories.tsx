@@ -6,16 +6,10 @@ export default {
   component: Button,
   children: "hello storybook",
   args: {
-    children: 'entrar',
-    size: 'md'
+    children: 'entrar',  
   },
   argTypes: {
-    size: {
-      options: ['sm', 'md', 'lg'],
-      control: {
-        type: 'select'
-      }
-    }
+
   }
 
 } as Meta<ButtonProps>;
