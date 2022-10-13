@@ -4,13 +4,8 @@ import {Checkbox, CheckboxProps} from "./CheckBox";
 export default {
   title: 'Components/Checkbox',
   component: Checkbox,
-  children: "hello storybook",
-  args: {
-    children: 'entrar',  
-  },
-  argTypes: {
-
-  }
+  args: {},
+  argTypes: {}
 
 } as Meta<CheckboxProps>;
 
