@@ -5,10 +5,11 @@ import { ReactNode } from 'react';
 export interface TextProps {
   children?: ReactNode
   size?:  'sm' | 'md' | 'lg',
-  asChild?: boolean
+  asChild?: boolean,
+  className?: string
 }
 
-export function Text({children, size = 'md', asChild}:TextProps) {
+export function Text({children, size = 'md', asChild, className}:TextProps) {
   const Comp = asChild ? Slot : 'span';
 
   return(
@@ -18,7 +19,8 @@ export function Text({children, size = 'md', asChild}:TextProps) {
         "text-xs": size === 'sm',
         "text-sm": size === 'md',
         "text-md": size === 'lg'
-      }
+      },
+      className
     )}>
       {children}
     </Comp>
