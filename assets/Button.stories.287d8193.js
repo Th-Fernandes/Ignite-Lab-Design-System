@@ -1,0 +1,2 @@
+import{B as t}from"./Button.6cb049d6.js";import"./clsx.m.256e9345.js";import"./index.module.0d97ac48.js";import"./index.e188fa6d.js";import"./iframe.41310290.js";import"./jsx-runtime.e23fd9ab.js";const i={title:"Components/Button",component:t,children:"hello storybook",args:{children:"entrar"},argTypes:{}},m={},a=["Default"];export{m as Default,a as __namedExportsOrder,i as default};
+//# sourceMappingURL=Button.stories.287d8193.js.map
