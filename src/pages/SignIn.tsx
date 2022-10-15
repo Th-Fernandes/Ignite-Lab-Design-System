@@ -5,8 +5,15 @@ import { Logo } from "../components/Logo";
 import { Text } from "../components/Text";
 import { TextInput } from "../components/TextInput";
 import { Envelope, Lock } from "phosphor-react";
+import { FormEvent, useState } from "react";
 
 export function SignIn() {
+  const [isUserSignedIn, setIsUserSignedIn] = useState<boolean>(false);
+
+  function handleSignIn(e:FormEvent) {
+    e.preventDefault();
+    setIsUserSignedIn(true);
+  }
   return (
     <div className="w-screen h-screen bg-gray-900 items-center justify-center flex">
       <div className="w-full max-w-[400px]">
@@ -16,7 +23,11 @@ export function SignIn() {
           <Text size="lg" className="text-gray-400 mt-1">Faça login e comece a usar!</Text>
         </header>
 
-        <form className="flex flex-col gap-4 mt-10 ">
+        <form 
+          onSubmit={e => handleSignIn(e)}
+          className="flex flex-col gap-4 mt-10"
+        >
+          {isUserSignedIn && <Text>User successfully signed in!</Text>}
           <div>
             <label htmlFor="email" >
               <Text className="text-sm font-semibold mb-4 block">Endereço de E-mail</Text>

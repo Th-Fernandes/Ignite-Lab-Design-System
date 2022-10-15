@@ -1,5 +1,7 @@
 import {Meta, StoryObj } from "@storybook/react";
 import {SignIn} from "./SignIn";
+import {within, userEvent, waitFor} from "@storybook/testing-library";
+import {expect} from "@storybook/jest";
 
 export default {
   title: 'Pages/SignIn',
@@ -7,5 +9,17 @@ export default {
   args: {},
   argTypes: {},
 } as Meta
+export const Default:StoryObj = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
 
-export const Default:StoryObj = {};
+    userEvent.type(canvas.getByPlaceholderText('exemplo@gmail.com'), 'thiago@gmail.com');
+    userEvent.type(canvas.getByPlaceholderText('********'), '12345678');
+
+    userEvent.click(canvas.getByRole('button'));
+
+    await waitFor(() => {
+      expect(canvas.getByText('User successfully signed in!')).toBeInTheDocument();
+    })
+  }
+};
